@@ -17,6 +17,8 @@ jobs:
         with:
           path: "CYBR8470-Docker_Actions_Lab"      
           
-      - name: RunOne
+      - name: Build docker
         run: |
-          echo Hello, world!
+          echo ---Building and starting up docker---
+          docker-compose -f ./CYBR8470-Docker_Actions_Lab/docker-compose.test.yml -p testing up -d
+          echo ---Containers up---
